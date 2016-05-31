@@ -1,0 +1,96 @@
+<div class="row">
+  <div class="col-sm-12 header">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <img src="http://planosassessoria.com.br/certificados/logo.png" class="img-responsive" alt="" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h2 class="text-primary">Estamos preparando um novo site. Aguarde!</h2>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container main">
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>Entre em contato conosco:</h4> <img ng-show="sending" width="25" src="http://workshopone.com.ph/images/loader/facebook_lo.gif" alt="" />
+    </div>
+  </div>
+  <div class="row">
+    <form name="frmContato" ng-submit="enviar()">
+      <div class="col-sm-6">
+        <div class="alert alert-success alert-dismissible" role="alert" ng-if="sent">
+          <button type="button" ng-click="sent = false" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          Email enviado. Obrigado!
+        </div>
+        <div class="alert alert-danger alert-dismissible" role="alert" ng-if="error">
+          <button type="button" ng-click="error = false" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          Não foi possível enviar. Tente novamente!
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="">Nome:</label>
+              <input type="text" class="form-control" required="required" ng-model="contact.name" ng-disabled="sending">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="">Email:</label>
+              <input type="text" class="form-control" required="required" ng-model="contact.email" ng-disabled="sending">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <label for="">Mensagem:</label>
+              <textarea name="name" rows="8" cols="40" required="required" class="form-control" ng-model="contact.message" ng-disabled="sending"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div vc-recaptcha key="key"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <br>
+            <button type="submit" class="btn btn-primary" ng-disabled="frmContato.$invalid">Enviar</button> <img ng-show="sending" width="25" src="http://workshopone.com.ph/images/loader/facebook_lo.gif" alt="" />
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="fb-page" data-href="https://www.facebook.com/planosassessoria" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-width="500" data-height="450" data-hide-cover="false" data-show-facepile="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 footer">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>Telefones:</h4>
+        <h5>(66) 3468-3248</h5>
+        <h5>(66) 3468-1307</h5>
+        <h5>Rua 8 n° 212, Centro - Água Boa - MT</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <p>Planos Assessoria - {{year}}</p>
+      </div>
+    </div>
+  </div>
+</div>
